@@ -1,0 +1,43 @@
+.container_commit{
+    background-color: rgb(197, 197, 197);
+    border-radius: 10px;
+    margin:15px;
+    padding:10px;    
+}
+
+.block_commit{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    margin: 5px;
+}
+
+.block_commit__main{
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+   
+}
+
+.paragraph_style{
+    display: block
+}
+
+
+.view_code{
+    border: 1px solid rgb(218, 217, 217);
+    background-color: rgb(243, 241, 241);
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(109, 109, 109);
+}
+
+.view_code:hover{
+   cursor: pointer;
+}
+
+.span_class{
+    margin:0px 5px;
+}
