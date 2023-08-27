@@ -7,7 +7,7 @@ export const Navbar: FC = () => {
     <>
       <nav className={styles.navbar}>
         <div className={styles.logo}>Test</div>
-        <ul className={styles.navlinks}>
+        <ul className={styles.nav_links}>
 
           <NextLink href="/project/frontend_github" passHref>
               <span  className={styles.option}>Front End</span >

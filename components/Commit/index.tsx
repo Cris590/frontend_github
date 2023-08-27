@@ -28,13 +28,19 @@ const formatedDate = (date:Date)=>{
     <>
         <div className={styles['container_commit']}>
             <div className={styles['block_commit']}>
-                <div className={styles['block_commit__main']}>
-                    <span className={styles['span_class']}>{commit.message}</span>
-                    <span className={styles['span_class']}>{commit.sha}</span>
-                </div>
+                <span className={`${styles.span_class} ${styles.commit_sha}`}>
+                    {commit.sha}
+                </span>
                 <div>
-                    <span>{formatedDate(commit.date)} </span>
+                    <span className={`${styles.span_class} ${styles.commit_date}`}>{formatedDate(commit.date)} </span>
                 </div>
+            </div>
+            <div className={styles['block_commit']}>
+                
+                <div className={styles['block_commit__main']}>
+                    <span className={`${styles.span_class} ${styles.commit_message}`}>{commit.message}</span>
+                </div>
+               
             </div>
             <div className={styles['block_commit']}>
                 <div className={styles['block_commit__main']}>
@@ -42,7 +48,12 @@ const formatedDate = (date:Date)=>{
                     <span className={styles['span_class']}>{commit.author}</span> - <span className={styles['span_class']}>{commit.email}</span>
                 </div>
                 <div className={styles['view_code']}>
-                    <a href={commit.html_url} title="View Code" target="_blank"> &lt; &gt; </a>
+                    <a href={commit.html_url} title="View Code" target="_blank" 
+                        style={{
+                            textDecoration:'none',
+                            color:'blueviolet'
+                        }}
+                    > &lt; &gt; </a>
                 </div>
 
             </div>

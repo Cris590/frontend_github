@@ -5,6 +5,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+    right: 0;
+    
 }
 
 .logo {
@@ -12,10 +18,8 @@
     font-weight: bold;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.nav_links {
+    margin-right: 100px;
 }
 
 .option {

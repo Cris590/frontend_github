@@ -41,6 +41,7 @@ const CommitHistoryByProject: NextPage<Props> = ({ branches, repo }) => {
     }
 
     const handleSelectChange = (event: any) => {
+        setCommits([]);
         setBranch(event.target.value);
     };
 
@@ -52,18 +53,40 @@ const CommitHistoryByProject: NextPage<Props> = ({ branches, repo }) => {
                     <p style={{
                         fontSize:'x-large',
                         fontWeight:'bold',
-                    }}> {repo === 'backend_github' ? 'Backend Commits' : 'FrontEnd Commits' }</p>
+                    }}> {repo === 'backend_github' ? 'Backend Commits' : 'FrontEnd Commits' }  
+                        <span style={{
+                            fontWeight:'none',
+                            fontSize:'medium',
+                            marginLeft:'30px',
+                            color:'rgb(186, 185, 185)'
+                        }}>
+                            Selected Branch:  
+                        </span><span style={{ 
+                            fontWeight:'none',
+                            fontSize:'medium',
+                            marginLeft:'30px',
+                            color:'rgb(186, 185, 185)'
+                        }}>{branch}</span>
+                    </p>
+                    
                     <div style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        width:'200px'
+                        width:'250px'
                     }}>
-                        <label htmlFor="quick-select">Select Branch:</label>
+                        <label 
+                            htmlFor="quick-select"
+                            style={{
+                                fontSize:'13px',
+                                fontWeight: 'bold',
+                                color: 'blueviolet'
+                            }}
+                        >Select Branch:</label>
                         <select 
                             style={{
                                 borderRadius:'15px',
                                 margin:'15px 0px',
-                                height:'25px',
+                                height:'30px',
                                 padding:'5px'
                             }}
                              id="quick-select" value={branch} onChange={handleSelectChange}>
@@ -77,13 +100,21 @@ const CommitHistoryByProject: NextPage<Props> = ({ branches, repo }) => {
                                 branches?.map((branch) => <option key={branch} value={branch}>{branch}</option>)
                             }
                         </select>
-                        <p>Selected Branch: {branch}</p>
+                       
                     </div>
                 </div>
 
                 <div>
                     {
                         commits?.map((commit) => <Commit key={commit.sha} commit={commit}/>)
+                    }
+
+                    {
+                        (commits.length == 0 && branch !='') && <div style={{
+                            margin:'30px',
+                            marginLeft:'290px',
+                            fontSize:'16px',
+                        }}>...Cargando</div>
                     }
                 </div>
             </Layout>
