@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { GetStaticProps, NextPage, GetStaticPaths } from 'next';
 
 import { githubApi } from '../../api';
-import { CommitInterface } from '@/interfaces';
+import { CommitInterface } from '../../interfaces';
 import { Commit, Layout } from '../../components';
+import React from 'react';
 
 
 interface Props {
