@@ -13,9 +13,7 @@ const HomePage: NextPage = () => {
     }, [])
     
     return (
-      <Layout title='Listado Pokemons'>
-        
-      </Layout>
+      <></>
     )
 }
 
